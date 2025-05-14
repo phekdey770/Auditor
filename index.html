@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditor Professional Services</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/4306/4306876.png">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --font-normal: 'Kantumruy Pro', sans-serif;
+            --font-header: 'Moul', cursive;
+            --font-model: 'Moulpali', cursive;
+        }
+
+        @font-face {
+            font-family: 'Moul';
+            src: url('https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/moul/Moul-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Moulpali';
+            src: url('https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/moulpali/Moulpali-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-normal);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: var(--font-header);
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 70px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: var(--font-header);
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Services Section */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-family: var(--font-header);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            font-family: var(--font-model);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-color);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            font-family: var(--font-header);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80') no-repeat center center/cover;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 80, 0.8);
+        }
+
+        .testimonials .section-title h2 {
+            color: white;
+            position: relative;
+        }
+
+        .testimonials .section-title p {
+            color: var(--light-color);
+            position: relative;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 0 1rem;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--secondary-color);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .testimonial-text::before {
+            top: -20px;
+            left: -10px;
+        }
+
+        .testimonial-text::after {
+            bottom: -40px;
+            right: -10px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-family: var(--font-model);
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            color: var(--light-color);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-color);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            background-color: var(--secondary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: var(--font-normal);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h3 {
+            font-family: var(--font-header);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-col p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            display: block;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .toggle-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-family: var(--font-normal);
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .toggle-btn.active {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .about-img {
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background: var(--primary-color);
+                transition: left 0.3s;
+                padding: 2rem;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.5rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-btns {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-up {
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/4306/4306876.png" alt="Auditor Logo">
+                <div class="logo-text">Auditor Pro</div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home" class="en">Home</a><a href="#home" class="km" style="display: none;">ទំព័រដើម</a></li>
+                    <li><a href="#services" class="en">Services</a><a href="#services" class="km" style="display: none;">សេវាកម្ម</a></li>
+                    <li><a href="#about" class="en">About</a><a href="#about" class="km" style="display: none;">អំពី</a></li>
+                    <li><a href="#testimonials" class="en">Testimonials</a><a href="#testimonials" class="km" style="display: none;">ការអនុម័ត</a></li>
+                    <li><a href="#contact" class="en">Contact</a><a href="#contact" class="km" style="display: none;">ទាក់ទង</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="en">Professional Audit Services</h1>
+            <h1 class="km" style="display: none;">សេវាកម្មសវនកម្មវិជ្ជាជីវៈ</h1>
+            <p class="en">We provide comprehensive audit services to ensure your financial statements are accurate, reliable, and compliant with all regulations.</p>
+            <p class="km" style="display: none;">យើងផ្តល់សេវាកម្មសវនកម្មដ៏ទូលំទូលាយ ដើម្បីធានាថារបាយការណ៍ហិរញ្ញវត្ថុរបស់អ្នកមានភាពត្រឹមត្រូវ អាចទុកចិត្តបាន និងអនុលោមតាមបទប្បញ្ញត្តិទាំងអស់។</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn">Get Started</a>
+                <a href="#services" class="btn btn-outline">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="section-title" data-aos="fade-up">
+            <h2 class="en">Our Services</h2>
+            <h2 class="km" style="display: none;">សេវាកម្មរបស់យើង</h2>
+            <p class="en">We offer a wide range of audit and assurance services to meet your business needs</p>
+            <p class="km" style="display: none;">យើងផ្តល់នូវសេវាកម្មសវនកម្ម និងការធានាជាច្រើន ដើម្បីបំពេញតម្រូវការអាជីវកម្មរបស់អ្នក</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80" alt="Financial Audit">
+                </div>
+                <div class="service-content">
+                    <h3 class="en">Financial Audit</h3>
+                    <h3 class="km" style="display: none;">សវនកម្មហិរញ្ញវត្ថុ</h3>
+                    <p class="en">Comprehensive examination of your financial statements to ensure accuracy and compliance with accounting standards.</p>
+                    <p class="km" style="display: none;">ការពិនិត្យដ៏ទូលំទូលាយនៃរបាយការណ៍ហិរញ្ញវត្ថុរបស់អ្នក ដើម្បីធានាបាននូវភាពត្រឹមត្រូវ និងការអនុលោមតាមស្តង់ដារគណនេយ្យ។</p>
+                </div>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Internal Audit">
+                </div>
+                <div class="service-content">
+                    <h3 class="en">Internal Audit</h3>
+                    <h3 class="km" style="display: none;">សវនកម្មខាងក្នុង</h3>
+                    <p class="en">Independent evaluation of your internal controls, risk management, and governance processes.</p>
+                    <p class="km" style="display: none;">ការវាយតម្លៃឯករាជ្យនៃការគ្រប់គ្រងខាងក្នុង ការគ្រប់គ្រងហានិភ័យ និងដំណើរការគ្រប់គ្រងរបស់អ្នក។</p>
+                </div>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Tax Compliance">
+                </div>
+                <div class="service-content">
+                    <h3 class="en">Tax Compliance</h3>
+                    <h3 class="km" style="display: none;">ការអនុលោមតាមពន្ធ</h3>
+                    <p class="en">Ensure your business meets all tax obligations and takes advantage of available tax benefits.</p>
+                    <p class="km" style="display: none;">ធានាថាអាជីវកម្មរបស់អ្នកបំពេញកាតព្វកិច្ចពន្ធទាំងអស់ និងទាញយកប្រយោជន៍ពន្ធដែលអាចប្រើប្រាស់បាន។</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="about-container">
+            <div class="about-img" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="About Us">
+            </div>
+            <div class="about-content" data-aos="fade-left">
+                <h2 class="en">About Our Firm</h2>
+                <h2 class="km" style="display: none;">អំពីក្រុមហ៊ុនរបស់យើង</h2>
+                <p class="en">With over 15 years of experience in the auditing industry, our firm has established itself as a trusted partner for businesses of all sizes. We combine technical expertise with a deep understanding of our clients' needs.</p>
+                <p class="km" style="display: none;">ជាមួយនឹងបទពិសោធន៍ជាង 15 ឆ្នាំក្នុងឧស្សាហកម្មសវនកម្ម ក្រុមហ៊ុនរបស់យើងបានក្លាយជាដៃគូដែលអាចទុកចិត្តបានសម្រាប់អាជីវកម្មគ្រប់ទំហំ។ យើងផ្សំជំនាញបច្ចេកទេសជាមួយនឹងការយល់ដឹងយ៉ាងស៊ីជម្រៅអំពីតម្រូវការរបស់អតិថិជន។</p>
+                <p class="en">Our team of certified professionals is committed to delivering high-quality audit services with integrity and objectivity.</p>
+                <p class="km" style="display: none;">ក្រុមអ្នកវិជ្ជាជីវៈដែលបានផ្តល់សញ្ញាប័ត្ររបស់យើងប្តេជ្ញាចិត្តផ្តល់សេវាកម្មសវនកម្មដែលមានគុណភាពខ្ពស់ដោយមានសុចរិតភាព និងវៀចវេរ។</p>
+                <div class="stats">
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="stat-number">15+</div>
+                        <div class="en">Years Experience</div>
+                        <div class="km" style="display: none;">ឆ្នាំបទពិសោធន៍</div>
+                    </div>
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="stat-number">200+</div>
+                        <div class="en">Happy Clients</div>
+                        <div class="km" style="display: none;">អតិថិជនរីករាយ</div>
+                    </div>
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="stat-number">50+</div>
+                        <div class="en">Projects Completed</div>
+                        <div class="km" style="display: none;">គម្រោងបានបញ្ចប់</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="section-title" data-aos="fade-up">
+            <h2 class="en">Client Testimonials</h2>
+            <h2 class="km" style="display: none;">ការអនុម័តរបស់អតិថិជន</h2>
+            <p class="en">What our clients say about our services</p>
+            <p class="km" style="display: none;">អ្វីដែលអតិថិជនរបស់យើងនិយាយអំពីសេវាកម្មរបស់យើង</p>
+        </div>
+        <div class="testimonial-slider" data-aos="fade-up">
+            <div class="testimonial">
+                <div class="testimonial-text en">
+                    "The audit team was extremely professional and thorough. They identified several areas for improvement in our financial processes that we hadn't noticed before."
+                </div>
+                <div class="testimonial-text km" style="display: none;">
+                    "ក្រុមសវនកម្មមានភាពវិជ្ជាជីវៈ និងហ្មត់ចត់យ៉ាងខ្លាំង។ ពួកគេបានកំណត់អំពីផ្នែកជាច្រើនសម្រាប់ការកែលម្អនៅក្នុងដំណើរការហិរញ្ញវត្ថុរបស់យើងដែលយើងមិនបានកត់សម្គាល់ពីមុន។"
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client">
+                    </div>
+                    <div class="author-info">
+                        <h4>Sophal Chan</h4>
+                        <p class="en">CEO, ABC Corporation</p>
+                        <p class="km" style="display: none;">អគ្គនាយក, ABC Corporation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="section-title" data-aos="fade-up">
+            <h2 class="en">Contact Us</h2>
+            <h2 class="km" style="display: none;">ទាក់ទងមកយើងខ្ញុំ</h2>
+            <p class="en">Get in touch with our team for professional audit services</p>
+            <p class="km" style="display: none;">ទាក់ទងមកក្រុមរបស់យើងសម្រាប់សេវាកម្មសវនកម្មវិជ្ជាជីវៈ</p>
+        </div>
+        <div class="contact-container" data-aos="fade-up">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3 class="en">Our Office</h3>
+                        <h3 class="km" style="display: none;">ការិយាល័យរបស់យើង</h3>
+                        <p>123 Business Street, Phnom Penh, Cambodia</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <h3 class="en">Phone Number</h3>
+                        <h3 class="km" style="display: none;">លេខទូរស័ព្ទ</h3>
+                        <p>+855 23 456 7890</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3 class="en">Email Address</h3>
+                        <h3 class="km" style="display: none;">អាសយដ្ឋានអ៊ីមែល</h3>
+                        <p>info@auditorpro.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h3 class="en">Working Hours</h3>
+                        <h3 class="km" style="display: none;">ម៉ោងធ្វើការ</h3>
+                        <p class="en">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                        <p class="km" style="display: none;">ថ្ងៃច័ន្ទ - ថ្ងៃសុក្រ៖ ៨:០០ព្រឹក - ៥:០០ល្ងាច</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="en">Your Name</label>
+                        <label for="name" class="km" style="display: none;">ឈ្មោះរបស់អ្នក</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="en">Email Address</label>
+                        <label for="email" class="km" style="display: none;">អាសយដ្ឋានអ៊ីមែល</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="en">Subject</label>
+                        <label for="subject" class="km" style="display: none;">ប្រធានបទ</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="en">Your Message</label>
+                        <label for="message" class="km" style="display: none;">សាររបស់អ្នក</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn en">Send Message</button>
+                    <button type="submit" class="btn km" style="display: none;">ផ្ញើសារ</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4306/4306876.png" alt="Auditor Logo" style="filter: brightness(0) invert(1);">
+                    <div class="logo-text">Auditor Pro</div>
+                </div>
+                <p class="en">Providing exceptional audit services with integrity and professionalism since 2010.</p>
+                <p class="km" style="display: none;">ផ្តល់សេវាកម្មសវនកម្មដ៏ល្អវែងឆ្ងាយដោយមានសុចរិតភាព និងវិជ្ជាជីវៈចាប់តាំងពីឆ្នាំ២០១០។</p>
+            </div>
+            <div class="footer-col">
+                <h3 class="en">Quick Links</h3>
+                <h3 class="km" style="display: none;">តំណភ្ជាប់រហ័ស</h3>
+                <ul class="footer-links">
+                    <li><a href="#home" class="en">Home</a><a href="#home" class="km" style="display: none;">ទំព័រដើម</a></li>
+                    <li><a href="#services" class="en">Services</a><a href="#services" class="km" style="display: none;">សេវាកម្ម</a></li>
+                    <li><a href="#about" class="en">About</a><a href="#about" class="km" style="display: none;">អំពី</a></li>
+                    <li><a href="#testimonials" class="en">Testimonials</a><a href="#testimonials" class="km" style="display: none;">ការអនុម័ត</a></li>
+                    <li><a href="#contact" class="en">Contact</a><a href="#contact" class="km" style="display: none;">ទាក់ទង</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="en">Our Services</h3>
+                <h3 class="km" style="display: none;">សេវាកម្មរបស់យើង</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="en">Financial Audit</a><a href="#" class="km" style="display: none;">សវនកម្មហិរញ្ញវត្ថុ</a></li>
+                    <li><a href="#" class="en">Internal Audit</a><a href="#" class="km" style="display: none;">សវនកម្មខាងក្នុង</a></li>
+                    <li><a href="#" class="en">Tax Compliance</a><a href="#" class="km" style="display: none;">ការអនុលោមតាមពន្ធ</a></li>
+                    <li><a href="#" class="en">Risk Assessment</a><a href="#" class="km" style="display: none;">ការវាយតម្លៃហានិភ័យ</a></li>
+                    <li><a href="#" class="en">Consulting</a><a href="#" class="km" style="display: none;">ការប្រឹក្សា</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="en">Connect With Us</h3>
+                <h3 class="km" style="display: none;">តភ្ជាប់ជាមួយយើង</h3>
+                <p class="en">Follow us on social media for updates and insights.</p>
+                <p class="km" style="display: none;">តាមដានយើងនៅលើបណ្តាញសង្គមសម្រាប់ព័ត៌មានថ្មីៗ និងការយល់ដឹង។</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="en">2025 - All rights reserved. Provide by Mr. Phekdey PHORN</p>
+            <p class="km" style="display: none;">២០២៥ - រក្សារ​សិទ្ធិ​គ្រប់​យ៉ាង ដោយលោក ផន ភក្ដី។</p>
+        </div>
+    </footer>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button class="toggle-btn active" id="enBtn">EN</button>
+        <button class="toggle-btn" id="kmBtn">ខ្មែរ</button>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = nav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on a nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Language toggle functionality
+        const enBtn = document.getElementById('enBtn');
+        const kmBtn = document.getElementById('kmBtn');
+
+        enBtn.addEventListener('click', () => {
+            if (!enBtn.classList.contains('active')) {
+                // Switch to English
+                enBtn.classList.add('active');
+                kmBtn.classList.remove('active');
+                
+                // Show English content
+                document.querySelectorAll('.en').forEach(el => {
+                    el.style.display = 'block';
+                });
+                
+                // Hide Khmer content
+                document.querySelectorAll('.km').forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
+        });
+
+        kmBtn.addEventListener('click', () => {
+            if (!kmBtn.classList.contains('active')) {
+                // Switch to Khmer
+                kmBtn.classList.add('active');
+                enBtn.classList.remove('active');
+                
+                // Show Khmer content
+                document.querySelectorAll('.km').forEach(el => {
+                    el.style.display = 'block';
+                });
+                
+                // Hide English content
+                document.querySelectorAll('.en').forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                header.style.padding = '0.5rem 0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '1rem 0';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
